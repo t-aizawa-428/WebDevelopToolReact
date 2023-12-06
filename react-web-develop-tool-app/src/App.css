@@ -1,0 +1,254 @@
+@charset "utf-8";
+
+/* 共通部分
+------------------------------------- */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  background-color: #fff;
+  color: black;
+}
+
+.container {
+  position: relative;
+  padding-bottom: 60px;
+  /* box-sizing: border-box; */
+  min-height: 100vh;
+}
+
+/* ヘッダー
+------------------------------------- */
+.header {
+  padding: 1rem;
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  border-bottom: 4px solid #00005d;
+}
+
+/* フッター
+------------------------------------- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  padding: 0.75rem;
+  text-align: center;
+  border-top: 4px solid #00005d;
+  background-color: black;
+  color: #ccc;
+}
+
+/* メインエリア
+------------------------------------ */
+.wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2% 4%;
+}
+
+.main-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  width: 22%;
+}
+
+article {
+  width: 74%;
+}
+
+/* サイドメニュー
+------------------------------------ */
+.aside-menu {
+  min-height: 100vh;
+  border: 4px solid #ccc;
+  padding: 1rem 0.5rem;
+  height: 100%;
+}
+
+.aside-menu li {
+  display: block;
+  padding: 10px 10px;
+  font-size: 1.175rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  list-style: none;
+  margin-bottom: 0.75rem;
+  background-color: black;
+}
+
+.aside-menu li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* メインコンテンツ
+------------------------------------ */
+.article-main {
+  min-height: 100vh;
+  text-align: center;
+  border: 4px solid #ccc;
+}
+
+.article-main__name {
+  color: #fff;
+  background-color: black;
+  margin: 1rem 1rem;
+  padding: 30px 30px;
+  text-align: left;
+}
+
+.article-main__btn {
+  border: 3px solid #ccc;
+  border-radius: 50px;
+  color: #fff;
+  background-color: #00005d;
+  padding: 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.article-main__manual {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 文字数カウント
+------------------------------------ */
+.article-main__text-area {
+  border: 4px solid #ccc;
+  width: 80%;
+  height: 20%;
+  margin: 2rem 10% 2rem;
+  min-height: 10vh;
+}
+
+.article-main__text-area-result input {
+  border: 3px solid #ccc;
+  width: 100px;
+  margin-bottom: 1.5rem;
+  padding: 0 0 0 5px;
+}
+
+/* 文字列生成
+------------------------------------ */
+.article-main__select-area label {
+  margin: 5px;
+}
+
+.article-main__create-text-area {
+  border: 4px solid #ccc;
+  width: 80%;
+  margin: 2rem 10% 2rem;
+  min-height: 30vh;
+}
+
+/* パスワード生成
+------------------------------------ */
+#password-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.article-main__password-text {
+  border: 2px solid #ccc;
+  width: 20.81%;
+  height: 45px;
+  margin: 1rem 1rem;
+  text-align: center;
+  padding: 1px 1px;
+}
+
+#password-character-count {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+#password-character-count label {
+  margin: 10px;
+}
+
+/* JSON整形
+------------------------------------ */
+
+.article-main__json-text-area {
+  border: 4px solid #ccc;
+  width: 80%;
+  /* height: 50%; */
+  margin: 2rem 10% 2rem;
+  min-height: 50vh;
+}
+
+/* モバイル版
+------------------------------------ */
+@media (max-width: 600px) {
+  /* ヘッダー */
+  .header {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  /* メインエリア */
+  aside {
+    width: 100%;
+    order: 2;
+  }
+  article {
+    width: 100%;
+    order: 1;
+  }
+
+  .article-main__name {
+    font-size: 1.5rem;
+  }
+
+  .aside-menu {
+    min-height: 10vh;
+    border: none;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 10px;
+  }
+
+  .aside-menu li {
+    margin-bottom: 0;
+    font-size: 0.5rem;
+  }
+
+  .main-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-main {
+    min-height: 63vh;
+  }
+
+  .article-main__name {
+    margin: 1rem 1rem;
+    padding: 15px 15px;
+  }
+
+  /* 文字数カウント */
+  .article-main__text-area {
+    margin: 1rem 10% 1rem;
+  }
+
+  /* パスワード生成 */
+  .article-main__password-text {
+    margin: 0.5rem 0.5rem;
+    font-size: 0.5rem;
+    width: 25%;
+  }
+}
